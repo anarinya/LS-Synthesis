@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { addItem } from '../../actions';
 import { Field, reduxForm } from 'redux-form';
-const  { DOM: { input } } = React;
 
 const FIELDS = {
   name: {
