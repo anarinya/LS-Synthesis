@@ -1,0 +1,323 @@
+/***********************************************
+ Global
+***********************************************/
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: monospace;
+}
+
+img {
+  image-rendering: -moz-pixelated;         /* Firefox */
+  image-rendering:   -o-pixelated;         /* Opera */
+  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: pixelated;
+  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+}
+
+.main {
+  padding: 0 20px;
+}
+
+.container {
+  width: 90%;
+  margin: auto;
+}
+
+/***********************************************
+ Nav
+***********************************************/
+
+.Nav {
+  border-bottom: 1px solid #eee;
+  height: 50px;
+  line-height: 50px;
+  padding: 10px 20px;
+}
+
+.Nav .title {
+  font-size: 2em;
+  float:left;
+}
+
+.Nav .Menu {
+  list-style: none;
+  font-size: 1.4em;
+  float: right;
+  margin: 0;
+}
+
+.Nav .Menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.Nav .Menu a {
+  text-decoration: none;
+}
+
+.Nav .Menu a:hover {
+  color: orange;
+}
+
+/***********************************************
+ Home
+***********************************************/
+
+.Home {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.Home .welcome-text {
+  font-size: 2em;
+}
+
+.Home .welcome-area img {
+  width: 100px;
+  padding: 30px;
+}
+
+/***********************************************
+ Products
+***********************************************/
+
+.Products .product-list {
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.Products .product-list li {
+  height: 150px;
+  min-width: 160px;
+  background-color: #fff;
+  text-align: center;
+  border: 10px solid #000;
+  display: inline-block;
+  margin: 20px;
+  padding: 20px;
+}
+
+.Products .product-list img {
+  height: 100%;
+}
+
+/***********************************************
+ ProductDetails
+***********************************************/
+
+.ProductDetails .product-img {
+
+  min-height: 170px;
+}
+
+.ProductDetails .product-area {
+  margin: 0 auto;
+  width: 600px;
+  display: block;
+}
+
+.ProductDetails .img-area {
+  float: left;
+  text-align: right;
+  background-color: #fff;
+  text-align: center;
+  border: 20px solid #000;
+  display: inline-block;
+  margin: 20px;
+  padding: 40px;
+}
+
+.ProductDetails .img-desc {
+  float: left;
+  display: inline-block;
+  font-size: 2em;
+  padding: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.ProductDetails .breadcrumbs {
+  margin-bottom: 50px;
+}
+
+.ProductDetails .price {
+  margin: auto;
+  padding: 20px;
+  background-color: #000;
+  color: #fff;
+  font-size: 2em;
+  width: 170px;
+  height: 100px;
+  line-height: 100px;
+}
+
+.ProductDetails .rupee {
+  width: 50px;
+  float: left;
+  margin-right: 20px;
+}
+
+/***********************************************
+ Admin - Inventory
+***********************************************/
+
+.Inventory thead {
+  text-align: center;
+  font-size: 1.2em;
+}
+
+.Inventory th {
+  border-bottom: 1px solid #000;
+}
+
+.Inventory {
+  border-collapse: collapse;
+  vertical-align: middle;
+  width: 100%;
+  border: 1px solid black;
+  border-bottom: 5px solid #000;
+  border-top: 5px solid #000;
+}
+
+.Inventory tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.Inventory tr:hover {
+  background-color: #000;
+  color: #fff;
+  cursor: pointer;
+}
+
+.Inventory th, td {
+  text-align: center;
+  padding: 10px;
+}
+
+.Inventory .center {
+  text-align: center;
+}
+
+.Inventory .product-img {
+
+}
+.Inventory .product-img img {
+  height: auto;
+  width: auto;
+  max-width: 100px;
+  height: 50px;
+  vertical-align: middle;
+}
+
+.Inventory .rupee {
+  vertical-align: middle;
+}
+
+/***********************************************
+ Admin - AddProduct
+***********************************************/
+
+.AddProduct {
+
+}
+
+.AddProduct .field-area {
+  display: inline-block;
+}
+
+.AddProduct label {
+
+}
+
+.AddProduct input {
+  padding: 5px;
+  border: 1px solid #eee;
+  margin-right: 20px;
+  margin-bottom: 20px;
+
+}
+
+.AddProduct .input-error {
+  border: 1px solid red;
+}
+
+.AddProduct input[name='name'] {
+  width: 150px;
+}
+
+.AddProduct input[name='price'],
+.AddProduct input[name='quantity'] {
+  width: 50px;
+}
+
+.AddProduct input[name='img'] {
+  width: 200px;
+}
+
+.AddProduct input[name='desc1'],
+.AddProduct input[name='desc2'] {
+  width: 200px;
+}
+
+.AddProduct .field-error {
+  padding: 5px 0;
+  color: red;
+}
+
+.AddProduct .add-btn {
+  padding: 5px 20px;
+  background-color: #000;
+  color: #fff;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 650px) {
+  .Menu {
+    margin: 20px 0;
+    text-align: left;
+    padding: 0;
+    width: 100%;
+  }
+
+  .Menu li {
+    display: inline-block;
+    padding: 0;
+    margin: 0;
+  }
+
+  .Menu li:first-child {
+    margin-right: 30px;
+  }
+
+    .Home .welcome-area img {
+    width: 80px;
+    padding: 10px;
+  }
+
+  .ProductDetails .product-area {
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+    background: green;
+    display: block;
+  }
+
+  .ProductDetails .img-area {
+    background-color: #fff;
+    text-align: center;
+    border: 20px solid #000;
+    margin: 5px 20px 0px 20px;
+    padding: 40px;
+  }
+
+  .ProductDetails .img-desc {
+    margin: auto;
+    font-size: 2em;
+    padding: 20px;
+    width: 300px;
+  }
+}
