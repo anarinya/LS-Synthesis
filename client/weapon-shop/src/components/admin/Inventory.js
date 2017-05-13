@@ -24,8 +24,8 @@ class Inventory extends Component {
             <th>ID</th>
             <th>Name</th>
             <th>Price</th>
-            <th>Description 1</th>
-            <th>Description 2</th>
+            <th>Description</th>
+            <th>Effect</th>
             <th>Quantity</th>
           </tr>
         </thead>
@@ -37,7 +37,7 @@ class Inventory extends Component {
               <td data-label="Name">{item.name}</td>
               <td data-label="Price"><img src={rupee} className="rupee" alt="rupee" /> {item.price}</td>
               <td data-label="Description">{item.desc1}</td>
-              <td data-label="Description 2">{item.desc2}</td>
+              <td data-label="Effect">{item.desc2}</td>
               <td data-label="Quantity">{item.quantity}</td>
             </tr>
           ))}
