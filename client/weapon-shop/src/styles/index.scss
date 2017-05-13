@@ -1,4 +1,14 @@
 /***********************************************
+ Vars
+***********************************************/
+$lightGray: #eee;
+$lighterGray: #fafafa;
+$darkest: #000;
+$lightest: #fff;
+$error: red;
+$linkHoverColor: orange;
+
+/***********************************************
  Global
 ***********************************************/
 
@@ -9,11 +19,11 @@ body {
 }
 
 img {
-  image-rendering: -moz-pixelated;         /* Firefox */
-  image-rendering:   -o-pixelated;         /* Opera */
-  image-rendering: -webkit-optimize-contrast;/* Webkit (non-standard naming) */
+  image-rendering: -moz-pixelated;
+  image-rendering:   -o-pixelated;
+  image-rendering: -webkit-optimize-contrast;
   image-rendering: pixelated;
-  -ms-interpolation-mode: nearest-neighbor;  /* IE (non-standard property) */
+  -ms-interpolation-mode: nearest-neighbor;
 }
 
 .main {
@@ -21,7 +31,7 @@ img {
 }
 
 .container {
-  width: 90%;
+  width: 95%;
   margin: auto;
 }
 
@@ -30,10 +40,20 @@ img {
 ***********************************************/
 
 .Nav {
-  border-bottom: 1px solid #eee;
+  background-color: $darkest;
+  color: $lightest;
   height: 50px;
-  line-height: 50px;
+  line-height: 45px;
   padding: 10px 20px;
+}
+
+.Nav a {
+  color: $lightest;
+  text-decoration: none;
+}
+
+.Nav a:hover {
+  color: $linkHoverColor;
 }
 
 .Nav .title {
@@ -50,21 +70,12 @@ img {
 
 .Nav .Menu li {
   display: inline-block;
-  margin-left: 20px;
-}
-
-.Nav .Menu a {
-  text-decoration: none;
-}
-
-.Nav .Menu a:hover {
-  color: orange;
+  margin-left: 30px;
 }
 
 /***********************************************
  Home
 ***********************************************/
-
 .Home {
   margin-top: 50px;
   text-align: center;
@@ -82,22 +93,29 @@ img {
 /***********************************************
  Products
 ***********************************************/
-
 .Products .product-list {
   padding-left: 0;
   list-style: none;
   text-align: center;
 }
 
+.Products h2 {
+  margin-top: 20px;
+}
+
 .Products .product-list li {
-  height: 150px;
-  min-width: 160px;
-  background-color: #fff;
+  height: 80px;
+  min-width: 80px;
+  background-color: $lightest;
   text-align: center;
-  border: 10px solid #000;
+  border: 5px solid $darkest;
   display: inline-block;
   margin: 20px;
   padding: 20px;
+}
+
+.Products .product-list li:hover {
+  background-color: $darkest;
 }
 
 .Products .product-list img {
@@ -109,22 +127,19 @@ img {
 ***********************************************/
 
 .ProductDetails .product-img {
-
-  min-height: 170px;
+  min-height: 150px;
 }
 
 .ProductDetails .product-area {
-  margin: 0 auto;
-  width: 600px;
-  display: block;
+  display: flex;
+  justify-content: center;
 }
 
 .ProductDetails .img-area {
   float: left;
   text-align: right;
-  background-color: #fff;
   text-align: center;
-  border: 20px solid #000;
+  border: 10px solid $darkest;
   display: inline-block;
   margin: 20px;
   padding: 40px;
@@ -132,11 +147,17 @@ img {
 
 .ProductDetails .img-desc {
   float: left;
-  display: inline-block;
-  font-size: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  font-size: 1.5em;
   padding: 20px;
-  width: 200px;
-  height: 200px;
+
+}
+
+.ProductDetails .img-desc h3 {
+  margin: 0;
 }
 
 .ProductDetails .breadcrumbs {
@@ -144,33 +165,31 @@ img {
 }
 
 .ProductDetails .price {
-  margin: auto;
-  padding: 20px;
-  background-color: #000;
-  color: #fff;
-  font-size: 2em;
-  width: 170px;
-  height: 100px;
-  line-height: 100px;
+  padding: 10px;
+  background-color: $darkest;
+  color: $lightest;
+  font-size: 1.5em;
+  height: 40px;
+  line-height: 40px;
 }
 
 .ProductDetails .rupee {
-  width: 50px;
+  background-color: $darkest;
+  width: 20px;
   float: left;
-  margin-right: 20px;
+  margin-right: 10px;
 }
 
 /***********************************************
  Admin - Inventory
 ***********************************************/
-
 .Inventory thead {
   text-align: center;
   font-size: 1.2em;
 }
 
 .Inventory th {
-  border-bottom: 1px solid #000;
+  border-bottom: 1px solid $darkest;
 }
 
 .Inventory {
@@ -178,17 +197,17 @@ img {
   vertical-align: middle;
   width: 100%;
   border: 1px solid black;
-  border-bottom: 5px solid #000;
-  border-top: 5px solid #000;
+  border-bottom: 5px solid $darkest;
+  border-top: 5px solid $darkest;
 }
 
 .Inventory tr:nth-child(even) {
-  background-color: #fafafa;
+  background-color: $lighterGray;
 }
 
 .Inventory tr:hover {
-  background-color: #000;
-  color: #fff;
+  background-color: $darkest;
+  color: $lightest;
   cursor: pointer;
 }
 
@@ -220,8 +239,8 @@ img {
  Admin - AddProduct
 ***********************************************/
 
-.AddProduct {
-
+.AddProduct h2 {
+  margin: 20px 0;
 }
 
 .AddProduct .field-area {
@@ -234,14 +253,14 @@ img {
 
 .AddProduct input {
   padding: 5px;
-  border: 1px solid #eee;
+  border: 1px solid $lightGray;
   margin-right: 20px;
   margin-bottom: 20px;
 
 }
 
 .AddProduct .input-error {
-  border: 1px solid red;
+  border: 1px solid $error;
 }
 
 .AddProduct input[name='name'] {
@@ -264,27 +283,42 @@ img {
 
 .AddProduct .field-error {
   padding: 5px 0;
-  color: red;
+  color: $error;
 }
 
 .AddProduct .add-btn {
   padding: 5px 20px;
-  background-color: #000;
-  color: #fff;
-  border: 1px solid #000;
+  background-color: $darkest;
+  color: $lightest;
+  border: 1px solid $darkest;
   margin-bottom: 20px;
 }
 
+/***********************************************
+ Mobile - General
+***********************************************/
 @media (max-width: 650px) {
+  /***********************************************
+    Mobile - Nav
+  ***********************************************/
   .Nav .title {
     float: none;
     text-align: center;
   }
 
+  .Nav {
+    margin-bottom: 90px;
+  }
+
+  .Nav a {
+    color: $darkest;
+  }
+
   .Nav .Menu {
-    margin: 20px 0;
+    border-bottom: 1px solid $darkest;
+    margin: 10px 0;
     text-align: center;
-    padding: 0;
+    padding: 10px 0;
     width: 100%;
     float: none;
   }
@@ -300,31 +334,99 @@ img {
     margin-right: 0px;
   }
 
+  /***********************************************
+    Mobile - Home
+  ***********************************************/
   .Home .welcome-area img {
     width: 80px;
     padding: 10px;
   }
 
-  .ProductDetails .product-area {
-    margin: 0 auto;
-    width: 400px;
+  /***********************************************
+    Mobile - Products
+  ***********************************************/
+  .Products h2 {
     text-align: center;
-    background: green;
-    display: block;
+    margin-bottom: 20px;
+  }
+
+  .Products .product-list li {
+    height: 60px;
+    min-width: 60px;
+    margin: 10px;
+    border: 3px solid $darkest;
+  }
+
+  /***********************************************
+    Mobile - ProductDetails
+  ***********************************************/
+  .ProductDetails .product-area {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .ProductDetails .product-img {
+    min-height: 60px;
   }
 
   .ProductDetails .img-area {
-    background-color: #fff;
-    text-align: center;
-    border: 20px solid #000;
-    margin: 5px 20px 0px 20px;
-    padding: 40px;
+    float: none;
+    border: 5px solid $darkest;
+    margin: 20px auto;
+    padding: 20px;
+    height: 100%;
+    width: 60px;
   }
 
   .ProductDetails .img-desc {
-    margin: auto;
-    font-size: 2em;
+    float: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    font-size: 1.5em;
     padding: 20px;
-    width: 300px;
+
+  }
+
+  .ProductDetails .breadcrumbs {
+    text-align: center;
+  }
+
+  /***********************************************
+    Mobile - Inventory
+  ***********************************************/
+  .Inventory thead {
+    display: none;
+  }
+  .Inventory td {
+    display: block;
+    text-align: left;
+    padding: 5px 20px;
+    margin-bottom: 10px;
+  }
+
+  .Inventory .product-img {
+    margin: 15px 0 10px;
+  }
+
+  .Inventory tr {
+    border-bottom: 1px solid $darkest;
+  }
+
+  .Inventory tr:hover {
+    background-color: inherit;
+    color: inherit;
+    cursor: arrow;
+  }
+
+  .Inventory td:before {
+    content: attr(data-label) ': ';
+    margin-right: 10px;
+    font-weight: bold;
+  }
+
+  .Inventory td:first-child:before {
+    content: none;
   }
 }

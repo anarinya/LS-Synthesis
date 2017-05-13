@@ -23,6 +23,7 @@ class ProductDetails extends Component {
             <img className="product-img" src={img} alt={name} />
           </div>
           <div className="img-desc">
+            <h3>{name}</h3>
             <p>{desc1}</p>
             <p>{desc2}</p>
             <p className="price">

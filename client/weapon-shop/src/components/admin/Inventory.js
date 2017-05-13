@@ -33,12 +33,12 @@ class Inventory extends Component {
           { items.map(item => (
             <tr key={item.id}>
               <td className="product-img"><img src={item.img} alt={item.name} /></td>
-              <td>{item.id}</td>
-              <td>{item.name}</td>
-              <td><img src={rupee} className="rupee" alt="rupee" /> {item.price}</td>
-              <td>{item.desc1}</td>
-              <td>{item.desc2}</td>
-              <td>{item.quantity}</td>
+              <td data-label="ID">{item.id}</td>
+              <td data-label="Name">{item.name}</td>
+              <td data-label="Price"><img src={rupee} className="rupee" alt="rupee" /> {item.price}</td>
+              <td data-label="Description">{item.desc1}</td>
+              <td data-label="Description 2">{item.desc2}</td>
+              <td data-label="Quantity">{item.quantity}</td>
             </tr>
           ))}
         </tbody>
