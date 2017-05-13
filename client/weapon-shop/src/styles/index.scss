@@ -19,11 +19,15 @@ body {
 }
 
 img {
-  image-rendering: -moz-pixelated;
+  image-rendering: -moz-crisp-edges;
   image-rendering:   -o-pixelated;
   image-rendering: -webkit-optimize-contrast;
   image-rendering: pixelated;
   -ms-interpolation-mode: nearest-neighbor;
+}
+
+a {
+  text-decoration: none;
 }
 
 .main {
