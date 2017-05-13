@@ -7,26 +7,36 @@ export const GET_ITEM_DETAILS = 'GET_ITEM_DETAIL';
 export const getItems = () => {
   const promise = axios.get('http://localhost:5000/items');
 
-  return {
-    type: GET_ITEMS,
-    payload: promise
+  return dispatch => {
+    return promise
+      .then(response => {
+        dispatch({ type: 'GET_ITEMS', payload: response.data });
+      })
+      .catch(error => console.log(error));
   };
 };
 
 export const getItemDetails = (id) => {
   const promise = axios.get(`http://localhost:5000/items/${id}`);
 
-  return {
-    type: GET_ITEM_DETAILS,
-    payload: promise
+  return dispatch => {
+    return promise
+      .then(response => {
+        dispatch({ type: GET_ITEM_DETAILS, payload: response.data });
+      })
+      .catch(error => console.log(error));
   };
 };
 
 export const addItem = (item, callback) => {
   const promise = axios.post('http://localhost:5000/items', item);
-  promise.then(() => callback());
-  return {
-    type: ADD_ITEM,
-    payload: promise
+
+  return dispatch => {
+    return promise
+      .then(response => {
+        callback();
+        dispatch({ type: ADD_ITEM, payload: response.data });
+      })
+      .catch(error => console.log(error));
   };
 };

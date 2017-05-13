@@ -23,6 +23,10 @@ class Products extends Component {
   render() {
     const { items } = this.props;
 
+    if (!items) {
+      return <div>Loading...</div>;
+    }
+
     return (
       <div className="Products">
         <h2>products</h2>

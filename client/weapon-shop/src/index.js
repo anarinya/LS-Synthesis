@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
+import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import ReduxPromise from 'redux-promise';
-
+// import ReduxPromise from 'redux-promise';
 import reducers from './reducers';
 import { Products, ProductDetails, Home, Nav } from './components';
 import { Admin } from './components/admin';
-import './styles/index.css';
+import './styles/index.scss';
 
-const createStoreWithMiddleware = applyMiddleware(ReduxPromise)(createStore);
+const createStoreWithMiddleware = applyMiddleware(thunk)(createStore);
 
 ReactDOM.render(
   <Provider store={ createStoreWithMiddleware(reducers) }>
